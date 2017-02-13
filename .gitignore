@@ -1,0 +1,6 @@
+/test/custom-serilog-formatter.test/project.lock.json
+bin
+obj
+/src/custom-serilog-formatter/project.lock.json
+/test/custom-serilog-formatter.test/custom-serilog-formatter.test.xproj.user
+/src/custom-serilog-formatter/custom-serilog-formatter.xproj.user
