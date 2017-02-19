@@ -17,6 +17,10 @@ Or add it to project.json
             "custom-serilog-formatter": "XXX"
         }
 
+Add the following to the ctor of Startup.cs
+
+        CustomSerilogConfigurator.Setup("doc-stack-app-api", false);
+
 ### Prequisites
 
 * docker, docker-compose
