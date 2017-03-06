@@ -6,9 +6,9 @@ namespace CustomSerilogFormatter
 {
     public static class CustomSerilogConfigurator
     {
-        public static void Setup(string appName, bool logToFile, string logFilePath = ".\\logs\\")
+        public static void Setup(string appName, bool logToFile, string logFilePath = ".\\logs\\", bool renderMessageTemplate = false)
         {
-            var formatter = new CustomSerilogFormatter(appName);
+            var formatter = new CustomSerilogFormatter(appName, renderMessageTemplate);
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .Enrich.WithThreadId()

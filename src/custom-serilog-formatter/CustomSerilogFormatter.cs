@@ -15,16 +15,19 @@ namespace CustomSerilogFormatter
     {
         readonly JsonValueFormatter _valueFormatter;
         readonly string _appName;
+        readonly bool _renderMessageTemplate;
 
         /// <summary>
         /// Construct a <see cref="JsonValueFormatter"/>, optionally supplying a formatter for
         /// <see cref="LogEventPropertyValue"/>s on the event.
         /// </summary>
         /// <param name="appName">Name of the application.</param>
+        /// <param name="renderMessageTemplate">Whether or not the message template should be rendered.</param>
         /// <param name="valueFormatter">A value formatter, or null.</param>
-        public CustomSerilogFormatter(string appName, JsonValueFormatter valueFormatter = null)
+        public CustomSerilogFormatter(string appName, bool renderMessageTemplate = false, JsonValueFormatter valueFormatter = null)
         {
             this._appName = appName;
+            _renderMessageTemplate = renderMessageTemplate;
             _valueFormatter = valueFormatter ?? new JsonValueFormatter(typeTagName: "$type");
         }
 
@@ -56,7 +59,7 @@ namespace CustomSerilogFormatter
             output.Write("\",\"timestamp\":\"");
             output.Write(logEvent.Timestamp.UtcDateTime.ToString("O"));
             output.Write("\",\"message\":");
-            var message = logEvent.MessageTemplate.Render(logEvent.Properties);
+            var message = _renderMessageTemplate ? logEvent.MessageTemplate.Render(logEvent.Properties) : logEvent.MessageTemplate.ToString();
             JsonValueFormatter.WriteQuotedJsonString(message, output);
 
             output.Write(",\"level\":\"");
