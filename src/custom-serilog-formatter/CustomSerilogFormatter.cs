@@ -13,20 +13,25 @@ namespace CustomSerilogFormatter
     /// </summary>
     public class CustomSerilogFormatter : ITextFormatter
     {
-        readonly JsonValueFormatter _valueFormatter;
-        readonly string _appName;
-        readonly bool _renderMessageTemplate;
+        private readonly JsonValueFormatter _valueFormatter;
+        private readonly string _appName;
+        private readonly string _appVersion;
+        private readonly bool _renderMessageTemplate;        
+
+        private const int LogVersion = 1;
 
         /// <summary>
         /// Construct a <see cref="JsonValueFormatter"/>, optionally supplying a formatter for
         /// <see cref="LogEventPropertyValue"/>s on the event.
         /// </summary>
         /// <param name="appName">Name of the application.</param>
+        /// <param name="appVersion">Version of the application.</param>
         /// <param name="renderMessageTemplate">Whether or not the message template should be rendered.</param>
         /// <param name="valueFormatter">A value formatter, or null.</param>
-        public CustomSerilogFormatter(string appName, bool renderMessageTemplate = false, JsonValueFormatter valueFormatter = null)
+        public CustomSerilogFormatter(string appName, string appVersion, bool renderMessageTemplate = false, JsonValueFormatter valueFormatter = null)
         {
-            this._appName = appName;
+            _appName = appName;
+            _appVersion = appVersion;
             _renderMessageTemplate = renderMessageTemplate;
             _valueFormatter = valueFormatter ?? new JsonValueFormatter(typeTagName: "$type");
         }
@@ -107,7 +112,10 @@ namespace CustomSerilogFormatter
                 output.Write(':');
                 valueFormatter.Format(property.Value, output);
             }
-
+            output.Write(",\"version\":\"");
+            output.Write(_appVersion);
+            output.Write(",\"logVersion\":\"");
+            output.Write(LogVersion);
             output.Write('}');
         }
     }
