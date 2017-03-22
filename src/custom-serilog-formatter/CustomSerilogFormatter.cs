@@ -114,9 +114,9 @@ namespace CustomSerilogFormatter
             }
             output.Write(",\"version\":\"");
             output.Write(_appVersion);
-            output.Write(",\"logVersion\":\"");
+            output.Write("\",\"logVersion\":\"");
             output.Write(LogVersion);
-            output.Write('}');
+            output.Write("\"}");
         }
     }
 }
