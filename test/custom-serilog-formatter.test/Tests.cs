@@ -15,7 +15,7 @@ namespace CustomSerilogFormatter.test
         public void TestLogEvent_GivenJustMandatoryParameters_ReturnsFormattedLogText()
        {
             //Arrange
-            var expected = "{\"app\":\"TestApp\",\"timestamp\":\"2017-03-08T05:38:50.2860586Z\",\"message\":\"TestMessage\",\"level\":\"Debug\",\"exception\":\"System.Exception: Test exception\",\"version\":\"1.2.3,\"logVersion\":\"1}";
+            var expected = "{\"app\":\"TestApp\",\"timestamp\":\"2017-03-08T05:38:50.2860586Z\",\"message\":\"TestMessage\",\"level\":\"Debug\",\"exception\":\"System.Exception: Test exception\",\"version\":\"1.2.3\",\"logVersion\":\"1\"}";
             var formatter = new CustomSerilogFormatter("TestApp", "1.2.3");
             var result = new StringBuilder();
             var output = new StringWriter(result);            
