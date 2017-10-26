@@ -1,5 +1,6 @@
 using System.IO;
 using Serilog;
+using Serilog.Events;
 using Serilog.Filters;
 
 namespace CustomSerilogFormatter
@@ -11,6 +12,9 @@ namespace CustomSerilogFormatter
             var formatter = new CustomSerilogFormatter(appName, appVersion, renderMessageTemplate);
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.WithThreadId()
                 .Enrich.FromLogContext()
                 .WriteTo.Logger(lc =>
