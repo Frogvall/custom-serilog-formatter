@@ -18,7 +18,7 @@ namespace CustomSerilogFormatter
         private readonly string _appVersion;
         private readonly bool _renderMessageTemplate;        
 
-        private const int LogVersion = 1;
+        private const int LogVersion = 2;
 
         /// <summary>
         /// Construct a <see cref="JsonValueFormatter"/>, optionally supplying a formatter for

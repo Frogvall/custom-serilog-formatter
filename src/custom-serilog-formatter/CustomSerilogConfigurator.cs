@@ -14,6 +14,8 @@ namespace CustomSerilogFormatter
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
+                .MinimumLevel.Override("IdentityServer4", LogEventLevel.Warning)
+                .MinimumLevel.Override("Healthcheck.HealtchCheckMiddleware", LogEventLevel.Warning)
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.WithThreadId()
                 .Enrich.FromLogContext()

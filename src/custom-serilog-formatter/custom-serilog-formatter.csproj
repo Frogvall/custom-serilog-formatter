@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>2.2.0</VersionPrefix>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <AssemblyName>custom-serilog-formatter</AssemblyName>
+    <PackageId>custom-serilog-formatter</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
+    <RuntimeFrameworkVersion>1.1.4</RuntimeFrameworkVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.2" />
+    <PackageReference Include="Serilog" Version="2.4.0" />
+    <PackageReference Include="Serilog.Enrichers.Thread" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="2.1.0" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.0" />
+  </ItemGroup>
+
+</Project>

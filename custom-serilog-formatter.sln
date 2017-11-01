@@ -1,20 +1,26 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ADEEFFEE-CC51-4953-B146-BA0C102DB863}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "custom-serilog-formatter", "src\custom-serilog-formatter\custom-serilog-formatter.xproj", "{211618DF-334C-4882-A26E-A097C1269DDA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{28A985D1-A809-42A6-B494-2ADFF642C9AD}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "custom-serilog-formatter", "src\custom-serilog-formatter\custom-serilog-formatter.csproj", "{211618DF-334C-4882-A26E-A097C1269DDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{BF1A6AE5-52CE-4D0B-85B4-F507F00CF41C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "custom-serilog-formatter.test", "test\custom-serilog-formatter.test\custom-serilog-formatter.test.xproj", "{4D261EA9-28DD-4AD1-9EC0-CE947A7DE32A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "custom-serilog-formatter.test", "test\custom-serilog-formatter.test\custom-serilog-formatter.test.csproj", "{4D261EA9-28DD-4AD1-9EC0-CE947A7DE32A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{730975A9-F840-44B1-9EA7-A824D832912B}"
+	ProjectSection(SolutionItems) = preProject
+		build-container.sh = build-container.sh
+		build.ps1 = build.ps1
+		build.sh = build.sh
+		circle.yml = circle.yml
+		docker-compose-build.yml = docker-compose-build.yml
+		LICENSE.md = LICENSE.md
+		publish.ps1 = publish.ps1
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,5 +43,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{211618DF-334C-4882-A26E-A097C1269DDA} = {ADEEFFEE-CC51-4953-B146-BA0C102DB863}
 		{4D261EA9-28DD-4AD1-9EC0-CE947A7DE32A} = {BF1A6AE5-52CE-4D0B-85B4-F507F00CF41C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99D2B4CB-BCEB-4A29-9AA1-174334F57699}
 	EndGlobalSection
 EndGlobal
