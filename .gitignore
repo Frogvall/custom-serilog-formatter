@@ -5,3 +5,5 @@ obj
 /test/custom-serilog-formatter.test/custom-serilog-formatter.test.xproj.user
 /src/custom-serilog-formatter/custom-serilog-formatter.xproj.user
 .vs
+/docker-compose-build-local.yml
+/testresults
