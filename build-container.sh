@@ -2,6 +2,7 @@
 set -e
 dotnet restore
 cd  test/custom-serilog-formatter.test
+dotnet restore
 dotnet xunit -xml $(pwd)/../../testresults/out.xml
 cd -
 rm -rf $(pwd)/package
