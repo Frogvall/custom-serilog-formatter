@@ -86,7 +86,7 @@ namespace CustomSerilogFormatter
                     name = '@' + name;
                 }
 
-                if (name == "RequestPath")
+                if (name == "RequestPath" || name == "CorrelationId") //Don't use Microsoft's Corr Id
                 {
                     continue;
                 }
