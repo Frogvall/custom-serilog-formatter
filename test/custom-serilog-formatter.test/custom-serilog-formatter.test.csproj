@@ -6,7 +6,7 @@
     <AssemblyName>custom-serilog-formatter.test</AssemblyName>
     <PackageId>custom-serilog-formatter.test</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <RuntimeFrameworkVersion>1.1.9</RuntimeFrameworkVersion>
+    <RuntimeFrameworkVersion>1.1.10</RuntimeFrameworkVersion>
   </PropertyGroup>
 
   <ItemGroup>
